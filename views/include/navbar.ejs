@@ -1,0 +1,85 @@
+<style>
+    .search-btn{
+        background-color: #fe424d;
+        color:#fff;
+        border-radius: 25px;
+    } 
+    .search-btn:hover{
+        background-color: #fe424d;
+        color:#fff;
+    } 
+    .search-btn i{
+        display: inline; 
+        margin-right: 0.5rem;
+    }
+
+    .search-inp{
+        padding:0 3rem 0 3rem;
+        border-radius: 25px;
+        font-weight: 200;
+        text-align: center;
+    }
+    .input-group{
+    width:500px;
+
+    } 
+    @media (max-width: 768px){
+   
+    .input-group {
+        width:250px;
+        margin:auto; 
+    }
+    .navbar-nav a{ 
+     font-weight: 400;
+     color: #fff;
+    }
+    .search-btn{
+       padding: 5px;;
+
+    }
+    .navbar-nav{
+       float: right;
+        width:250px;
+        background: linear-gradient(25deg,#ff6da5,#ec293c 50%);
+        font-size:1.2rem;
+        border-radius: 10px;
+        padding: 15px;
+        margin-top: 6%;
+    }
+}
+
+</style>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+       
+            <div class="input-group  ms-auto">
+                <select class="form-select  search-inp" id="inputGroupSelect03" aria-label="Example select with button addon">
+                  <option selected>Select  Destination</option>
+                  <option value="United State">United State</option>
+                  <option value="India">India</option>
+                  <option value="Dubai">Dubai</option>
+                </select>
+                <button class="btn search-btn" id="search" type="button"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/listings">Explore</a>
+                    <a class="nav-link" href="/listings/new">Airbnb your home</a>
+                    <% if(!currUser) { %>
+                        <a class="nav-link" href="/signup"><b>Signup</b></a>
+                        <a class="nav-link" href="/login"><b>Login</b></a>
+                    <% } %>
+                    <% if(currUser) { %>
+                        <a class="nav-link" href="/logout"><b>Logout</b></a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+</nav>
